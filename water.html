@@ -1,0 +1,107 @@
+<input type="text" placeholder="Enter Problem" id="message">
+<button type="submit" onclick="sendMessage()">Send Message</button>
+<html>
+
+<head>
+    <title>Report issues regrading Water supply</title>
+    <link rel="stylesheet" href="water.css">
+</head>
+
+<body>
+    <div class="electricity">
+        <nav>
+            <div class="header-content">
+                <h1>
+                    <a href="#aryan" style="text-decoration: none; color:rgb(0, 0, 0);">
+                        <p>Report issue related to Water Supply</p>
+                    </a>
+                </h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="water.jpeg" class="electiricity">
+            <div id="circle">
+                <div class="Issue one">
+                    <img src="nowater.jpeg">
+                    <div>
+                        <h1>No Water</h1>
+                        <p>No Water issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue two">
+                    <img src="lowwaterpressure.jpeg">
+                    <div>
+                        <h1>Low Water Pressure</h1>
+                        <p>Low Water Pressure issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue three">
+                    <img src="waterleak.jpeg">
+                    <div>
+                        <h1>Water Leak</h1>
+                        <p>Water Leak issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue four">
+                    <img src="contaminatedwater.jpeg">
+                    <div>
+                        <h1>Contaminated Water</h1>
+                        <p>Contaminated Water issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <img src="arrow.jpeg" id="upBtn">
+            <h3>Features</h3>
+            <img src="arrow.jpeg" id="downBtn">
+        </div>
+
+    </div>
+    <script>
+        var circle = document.getElementById("circle");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+
+        var rotatevalue = circle.style.transform;
+        var rotateSum;
+
+        upBtn.onclick = function () {
+            rotateSum = rotatevalue + "rotate(-90deg)";
+            circle.style.transform = rotateSum;
+            rotatevalue = rotateSum;
+        }
+        downBtn.onclick = function () {
+            rotateSum = rotatevalue + "rotate(90deg)";
+            circle.style.transform = rotateSum;
+            rotatevalue = rotateSum;
+        }
+        function sendMessage() {
+            // Replace this URL with the WhatsApp Web URL of the target number
+            console.log("Function is running")
+            var message = document.getElementById("message").value;
+            var whatsappUrl = "https://wa.me/" + +917895652528 + "?text=" + encodeURIComponent(`Electricity Related Problem :- ${message}`);
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
+</body>
+
+</html>

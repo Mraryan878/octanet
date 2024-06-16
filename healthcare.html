@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Report issues regrading Health Care</title>
+    <link rel="stylesheet" href="healthcare.css">
+</head>
+
+<body>
+
+    <div class="electricity">
+        <nav>
+            <div class="header-content">
+                <h1>
+                    <a href="#aryan" style="text-decoration: none; color:rgb(0, 0, 0);">
+                        <p>Report issue related to Health Care</p>
+                    </a>
+                </h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="Health_Care.jpeg" class="electiricity">
+            <div id="circle">
+                <div class="Issue one">
+                    <img src="inequitable distribution of health care.jpeg">
+                    <div>
+                        <h1>Inequitable distribution of health care</h1>
+                        <p>Inequitable distribution of health care issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue two">
+                    <img src="healthcare affordability.jpeg">
+                    <div>
+                        <h1>Healthcare affordability</h1>
+                        <p>Healthcare affordability issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue three">
+                    <img src="public health emergencies.jpeg">
+                    <div>
+                        <h1>Public health emergencies</h1>
+                        <p>Public health emergencies issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue four">
+                    <img src="healthcare frauds.jpeg">
+                    <div>
+                        <h1>Healthcare Frauds</h1>
+                        <p>Healthcare Frauds issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <img src="arrow.jpeg" id="upBtn">
+            <h3>Features</h3>
+            <img src="arrow.jpeg" id="downBtn">
+        </div>
+
+    </div>
+    <script>
+        var circle = document.getElementById("circle");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+
+        var rotatevalue = circle.style.transform;
+        var rotateSum;
+
+        upBtn.onclick = function () {
+            rotateSum = rotatevalue + "rotate(-90deg)";
+            circle.style.transform = rotateSum;
+            rotatevalue = rotateSum;
+        }
+        downBtn.onclick = function () {
+            rotateSum = rotatevalue + "rotate(90deg)";
+            circle.style.transform = rotateSum;
+            rotatevalue = rotateSum;
+        }
+
+        function sendMessage() {
+            // Replace this URL with the WhatsApp Web URL of the target number
+            console.log("Function is running")
+            var message = document.getElementById("message").value;
+            var whatsappUrl = "https://wa.me/" + +919013151515 + "?text=" + encodeURIComponent(`HealthCare Related Problem :- ${message}`);
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
