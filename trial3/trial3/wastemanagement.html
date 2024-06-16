@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>Report issues regrading Electricity</title>
+    <link rel="stylesheet" href="wastemanagement.css">
+</head>
+
+<body>
+
+    <div class="electricity">
+        <nav>
+            <div class="header-content">
+                <h1>
+                    <a href="#aryan" style="text-decoration: none; color:rgb(0, 0, 0);">
+                        <p>Report issue related to ELECTRICITY</p>
+                    </a>
+                </h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="Waste Management.jpg" class="electiricity">
+            <div id="circle">
+                <div class="Issue one">
+                    <img src="illegaldumping.jpeg">
+                    <div>
+                        <h1>Illegal Dumping</h1>
+                        <p>Illegal Dumping issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue two">
+                    <img src="littering.jpeg">
+                    <div>
+                        <h1>Littering</h1>
+                        <p>Littering issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue three">
+                    <img src="poorwastemanagement.jpeg">
+                    <div>
+                        <h1>Poor Waste Management</h1>
+                        <p>Poor Waste Management issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                <div class="Issue four">
+                    <img src="overflowingbin.jpeg">
+                    <div>
+                        <h1>Over Flowing Bin</h1>
+                        <p>Over Flowing Bin issues</p>
+                        <input type="text" placeholder="Enter Problem" id="message">
+                        <button type="submit" onclick="sendMessage()">Send Message</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <img src="arrow.jpeg" id="upBtn">
+            <h3>Features</h3>
+            <img src="arrow.jpeg" id="downBtn">
+        </div>
+
+    </div>
+    <script>
+        var circle = document.getElementById("circle");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+
+        var rotatevalue = circle.style.transform;
+        var rotateSum;
+
+        upBtn.onclick = function () {
+            rotateSum = rotatevalue + "rotate(-90deg)";
+            circle.style.transform = rotateSum;
+            rotatevalue = rotateSum;
+        }
+        downBtn.onclick = function () {
+            rotateSum = rotatevalue + "rotate(90deg)";
+            circle.style.transform = rotateSum;
+            rotatevalue = rotateSum;
+        }
+        function sendMessage() {
+            // Replace this URL with the WhatsApp Web URL of the target number
+            console.log("Function is running")
+            var message = document.getElementById("message").value;
+            var whatsappUrl = "https://wa.me/" + +8062245357 + "?text=" + encodeURIComponent(`Electricity Related Problem :- ${message}`);
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
